@@ -13,15 +13,16 @@
     </style>
     <script>
         const urlMap = {
-            "abc123": "https://www.google.com",
-            "pedidos2025": "https://www.github.com",
-            "test456": "https://www.openai.com"
+            "pedidos2025": "http://vmi2345869.contaboserver.net/PedidosExclusivo/site/login.php",
+            "xyz789": "https://www.github.com"
         };
 
         window.onload = function() {
-            const path = window.location.pathname.substring(1);
-            if (urlMap[path]) {
-                window.location.href = urlMap[path];
+            const params = new URLSearchParams(window.location.search);
+            const code = params.get("url");
+            
+            if (code && urlMap[code]) {
+                window.location.href = urlMap[code];
             } else {
                 document.body.innerHTML = '<h1>URL no encontrada</h1>';
             }
@@ -30,6 +31,6 @@
 </head>
 <body>
     <h1>Bienvenido al Acortador de URL</h1>
-    <p>Ingresa una URL corta en la barra de direcciones.</p>
+    <p>Usa el formato <strong>?url=abc123</strong> en la barra de direcciones.</p>
 </body>
 </html>
