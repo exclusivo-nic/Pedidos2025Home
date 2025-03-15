@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acortador de URL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+    <script>
+        const urlMap = {
+            "abc123": "https://www.google.com",
+            "pedidos2025": "https://www.github.com",
+            "test456": "https://www.openai.com"
+        };
+
+        window.onload = function() {
+            const path = window.location.pathname.substring(1);
+            if (urlMap[path]) {
+                window.location.href = urlMap[path];
+            } else {
+                document.body.innerHTML = '<h1>URL no encontrada</h1>';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Bienvenido al Acortador de URL</h1>
+    <p>Ingresa una URL corta en la barra de direcciones.</p>
+</body>
+</html>
