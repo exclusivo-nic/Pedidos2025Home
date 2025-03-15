@@ -3,18 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acortador de URL</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-    </style>
+    <title>Redirigiendo...</title>
     <script>
         const urlMap = {
-            "pedidos2025": "http://vmi2345869.contaboserver.net/PedidosExclusivo/site/login.php",
-            "xyz789": "https://www.github.com"
+            "pedidos2025": "http://vmi2345869.contaboserver.net/PedidosExclusivo/site/login.php"
         };
 
         window.onload = function() {
@@ -22,15 +14,10 @@
             const code = params.get("url");
             
             if (code && urlMap[code]) {
-                window.location.href = urlMap[code];
-            } else {
-                document.body.innerHTML = '<h1>URL no encontrada</h1>';
+                window.location.replace(urlMap[code]);
             }
         };
     </script>
 </head>
-<body>
-    <h1>Bienvenido al Acortador de URL</h1>
-    <p>Usa el formato <strong>?url=abc123</strong> en la barra de direcciones.</p>
-</body>
+<body></body>
 </html>
